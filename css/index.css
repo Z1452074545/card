@@ -1,0 +1,187 @@
+.cont {
+  height: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+.cont .cont_left {
+  border-right: 2px solid #787878;
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+.cont .cont_left .positi {
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+}
+.cont .cont_left .left_icon {
+  transform: rotate(270deg);
+  background: white;
+  font-weight: 700;
+  color: #787878;
+  position: absolute;
+  top: 32%;
+  right: -15px;
+}
+.cont .cont_left .left_icon i {
+  font-size: 30px;
+}
+.cont .cont_left .card_type .card_type_title {
+  font-size: 20px;
+  float: left;
+  margin-top: 10px;
+}
+.cont .cont_left .card_type .card_type_title_tab {
+  float: left;
+  margin-top: 10px;
+}
+.cont .cont_right {
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.cont .cont_right .positi_r {
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+}
+.cont .cont_right .right_cardnumber {
+  margin: auto;
+  text-align: left;
+  width: 80%;
+  height: 160px;
+  border-bottom: 2px solid #e2e2e2;
+}
+.cont .card_kind {
+  margin-left: -50px;
+}
+.cont .card_face {
+  margin-left: -60px;
+}
+.cont .cont_right {
+  float: right;
+  width: 50%;
+}
+.cont .color_red {
+  border-bottom-color: transparent;
+}
+.card_quantity {
+  width: 100%;
+  font-size: 20px;
+}
+.card_quantity .quantity_only {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+}
+.card_quantity .quantity_batch {
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.card_quantity .quantity_num {
+  display: inline-block;
+  font-size: 18px;
+  text-align: right;
+  width: 50px;
+  height: 20px;
+  border: 1px solid #878787;
+}
+.card_quantity .quantity_batch {
+  margin-left: 30px;
+}
+.card_quantity .quantity_box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-left: 1px solid #878787;
+  float: right;
+  position: relative;
+}
+.card_quantity .quantity_box .span_but_t {
+  display: inline-block;
+  font-size: 14px;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+.card_quantity .quantity_box .span_but_d {
+  display: inline-block;
+  font-size: 14px;
+  position: absolute;
+  bottom: -5px;
+  left: 2px;
+}
+.card_quantity .span_but_t {
+  transform: rotate(180deg);
+}
+.flex {
+  margin-left: 30px;
+  cursor: pointer;
+  height: auto!important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 440px;
+}
+.marg {
+  margin-left: 30px;
+  cursor: pointer;
+  height: auto!important;
+}
+.layui-this {
+  background: #41c7db !important;
+}
+.layui-form-label {
+  text-align: left !important;
+}
+.layui-input {
+  border: none;
+  outline: 0 none;
+}
+.card_select {
+  padding-left: 45px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.card_select span {
+  color: #41c7db;
+  margin-left: 10px;
+}
+.but_bg_auto {
+  width: 360px;
+  overflow: auto;
+  height: 100px;
+}
+.but_bg dd {
+  font-size: 16px;
+  line-height: 20px;
+}
+.layui-btn {
+  width: 380px;
+  margin-left: -65px;
+  background: #41c7db;
+  color: black;
+}
+#uploading {
+  width: 100px;
+  margin-left: 0px;
+}
+.color_gray {
+  color: gray;
+}
+.color_blue {
+  color: blue;
+}
+.template {
+  margin-left: 20px;
+}
