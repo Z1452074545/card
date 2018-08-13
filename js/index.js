@@ -12,8 +12,9 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         url: '/upload/',
         accept: 'file' //普通文件
             ,
-        exts: 'xlsx' //表格
-            ,
+        auto: false,
+        exts: 'xlsx', //表格
+        bindAction: "#but_field",
         done: function(res) {
             //如果上传失败
             if (res.code > 0) {
@@ -104,7 +105,10 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     var quantity_num = document.querySelector(".quantity_num");
     var singular_card = document.querySelector("#singular_card");
     var plural_card = document.querySelector("#plural_card");
+    var but_field = document.querySelector(".but_field");
     quantity_only.onclick = function() {
+        buts_subm.style.display = "block";
+        but_field.style.display = "none";
         quantity_only.className = "quantity_only marg layui-this";
         quantity_batch.className = " quantity_batch ";
         quantity_num.style.display = "none";
@@ -115,6 +119,8 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
 
     }
     quantity_batch.onclick = function() {
+        buts_subm.style.display = "none";
+        but_field.style.display = "block";
         quantity_only.className = "quantity_only marg";
         quantity_batch.className = " quantity_batch layui-this";
         quantity_num.style.display = "inline-block";
@@ -155,7 +161,6 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     // 监听提交
     form.on('submit(but_submit)', function(data) {
         layer.alert(JSON.stringify(data.field), {
-
             title: '最终的提交信息'
         })
         var obj1 = { "name": "yy", "ex": "na", "dd": "ss" }
@@ -166,10 +171,4 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         console.log(obj3);
         return false;
     });
-
-    form.on('submit(go)', function(data) {
-        console.log(data.elem)
-        return false;
-    });
-
 })
