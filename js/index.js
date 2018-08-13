@@ -46,8 +46,6 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
             layedit.sync(editIndex);
         }
     });
-
-
     var color_red = document.querySelectorAll(".color_red li");
     var card_types = document.querySelectorAll("#card_types li");
     var open_num = document.querySelector("#open_num");
@@ -57,27 +55,32 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     var but_bg = document.querySelectorAll(".but_bg dd");
     var but_submit = document.querySelector("#but_submit");
     var buts_subm = document.querySelector("#buts_subm");
-    if (card_type.innerText == false) {
-        console.log(card_type.innerText == false);
-        buts_subm.onclick = function() {
-            alert(1111);
-        }
-        but_submit.setAttribute("disabled", "disabled");
+    // but_submit.onclick = function() {
+    //         alert("出现");
+    //         return false;
 
-    } else if (card_kind.innerText == false) {
-        but_submit.setAttribute("disabled", "disabled");
-        buts_subm.onclick = function() {
-            alert(2);
-        }
-    } else if (face_value.innerText == null) {
-        but_submit.setAttribute("disabled", "disabled");
-        alert(3);
-    } else if (open_num.innerText == null) {
-        but_submit.setAttribute("disabled", "disabled");
-        alert(4);
-    } else {
-        but_submit.removeAttribute("disabled");
-    }
+    //     }
+    // if (card_type.innerText == false) {
+    //     console.log(card_type.innerText == false);
+    //     buts_subm.onclick = function() {
+    //         alert(1111);
+    //     }
+    //     but_submit.setAttribute("disabled", "disabled");
+
+    // } else if (card_kind.innerText == false) {
+    //     but_submit.setAttribute("disabled", "disabled");
+    //     buts_subm.onclick = function() {
+    //         alert(2);
+    //     }
+    // } else if (face_value.innerText == null) {
+    //     but_submit.setAttribute("disabled", "disabled");
+    //     alert(3);
+    // } else if (open_num.innerText == null) {
+    //     but_submit.setAttribute("disabled", "disabled");
+    //     alert(4);
+    // } else {
+    //     but_submit.removeAttribute("disabled");
+    // }
 
 
     for (var i = 0; i < card_types.length - 1; i++) {
@@ -151,7 +154,6 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
 
     }
     run_num();
-
     for (var i = 0; i <= color_red.length - 1; i++) {
         color_red[i].onclick = function() {
             card_kind.innerText = this.innerText;
