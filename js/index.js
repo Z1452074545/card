@@ -40,6 +40,10 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
                 return '标题至少得5个字符啊';
             }
         },
+        open_num: [/[\s\S]*/, '不能为空'],
+        face_value: [/[\s\S]*/, '不能为空'],
+        card_kind: [/[\s\S]*/, '不能为空'],
+        card_type: [/[\s\S]*/, '不能为空'],
         card: [/^$|(.+){16}$/, '卡号16位'],
         pass: [/(.+){16}$/, '卡密24位'],
         content: function(value) {
@@ -83,9 +87,9 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     // }
 
 
-    for (var i = 0; i < card_types.length - 1; i++) {
+    for (var i = 0; i < card_types.length; i++) {
         card_types[i].onclick = function() {
-            card_type.innerText = this.innerText;
+            card_type.value = this.innerText;
         }
     }
     for (var i = 0; i < but_bg.length; i++) {
@@ -94,7 +98,7 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
                 but_bg[i].className = ""
             }
             this.className = " layui-this"
-            face_value.innerText = this.innerText;
+            face_value.value = this.innerText;
         }
     }
 
@@ -115,7 +119,7 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         quantity_only.className = "quantity_only marg layui-this";
         quantity_batch.className = " quantity_batch ";
         quantity_num.style.display = "none";
-        open_num.innerText = 1 + "张";
+        open_num.value = 1 + "张";
         singular_card.style.display = "block";
         plural_card.style.display = "none";
         but_submit.removeAttribute("disabled");
@@ -127,7 +131,7 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         quantity_only.className = "quantity_only marg";
         quantity_batch.className = " quantity_batch layui-this";
         quantity_num.style.display = "inline-block";
-        open_num.innerText = 0 + "张";
+        open_num.value = 0 + "张";
         singular_card.style.display = "none";
         plural_card.style.display = "block";
         but_submit.setAttribute("disabled", "disabled");
@@ -139,14 +143,14 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         span_but_t.onclick = function() {
             i++;
             quantity_nums.innerText = i;
-            open_num.innerText = i + "张";
+            open_num.value = i + "张";
 
         }
         span_but_d.onclick = function() {
             if (i > 0) {
                 i--;
                 quantity_nums.innerText = i;
-                open_num.innerText = i + "张";
+                open_num.value = i + "张";
             } else {
                 return
             }
@@ -156,7 +160,7 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     run_num();
     for (var i = 0; i <= color_red.length - 1; i++) {
         color_red[i].onclick = function() {
-            card_kind.innerText = this.innerText;
+            card_kind.value = this.innerText;
         }
     }
 
@@ -173,4 +177,14 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
         console.log(obj3);
         return false;
     });
+    // 示例弹出
+    var card_modai = document.querySelector(".card_modai");
+    var card_m_but = document.querySelector(".card_m_but");
+    var example = document.querySelector("#example");
+    example.onclick = function() {
+        card_modai.style.display = "block";
+    }
+    card_m_but.onclick = function() {
+        card_modai.style.display = "none";
+    }
 })
