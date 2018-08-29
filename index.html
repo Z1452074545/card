@@ -20,13 +20,13 @@
                     <div class="card_type_title">类型</div>
                     <div class="card_type_title_tab layui-tab">
                         <ul class="layui-tab-title marg flex" id="card_types">
-                            <li class="layui-this">加油卡</li>
-                            <li>话费卡</li>
-                            <li>电商卡</li>
-                            <li>积分</li>
-                            <li>话费卡</li>
-                            <li>电商卡</li>
-                            <li>积分</li>
+                            <li class="layui-this" data-id="7">加油卡</li>
+                            <li data-id="1">话费卡</li>
+                            <li data-id="2">电商卡</li>
+                            <li data-id="3">积分</li>
+                            <li data-id="4">话费卡</li>
+                            <li data-id="5">电商卡</li>
+                            <li data-id="6">积分</li>
                         </ul>
                         <div class="card_tab_cont layui-tab-content">
                             <div class="layui-tab-item layui-show">
@@ -34,11 +34,11 @@
                                     <div class="card_type_title">种类</div>
                                     <div class="card_type_title_tab layui-tab">
                                         <ul class="layui-tab-title color_red marg flex">
-                                            <li class="layui-this">苏宁易购卡</li>
-                                            <li>京东E卡</li>
-                                            <li>一号店礼品卡</li>
-                                            <li>京东E卡</li>
-                                            <li>一号店礼品卡</li>
+                                            <li class="layui-this" data-id="1_1">苏宁易购卡</li>
+                                            <li data-id="1_2">京东E卡</li>
+                                            <li data-id="1_3">一号店礼品卡</li>
+                                            <li data-id="1_4">京东E卡</li>
+                                            <li data-id="1_5">一号店礼品卡</li>
                                         </ul>
                                         <div class="card_tab_cont layui-tab-content">
                                             <div class="layui-tab-item layui-show">
@@ -46,13 +46,13 @@
                                                     <div class="card_type_title">面值</div>
                                                     <div class="card_type_title_tab but_bg_auto">
                                                         <dl class="marg but_bg">
-                                                            <dd class="layui-this">￥50/￥00(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
-                                                            <dd>￥50/￥95(转让价)</dd>
+                                                            <dd class="layui-this" data-id="1_1_1">￥50/￥00(转让价)</dd>
+                                                            <dd data-id="1_1_2">￥50/￥95(转让价)</dd>
+                                                            <dd data-id="1_1_3">￥50/￥95(转让价)</dd>
+                                                            <dd data-id="1_1_4">￥50/￥95(转让价)</dd>
+                                                            <dd data-id="1_1_5">￥50/￥95(转让价)</dd>
+                                                            <dd data-id="1_1_6">￥50/￥95(转让价)</dd>
+                                                            <dd data-id="1_1_7">￥50/￥95(转让价)</dd>
                                                         </dl>
                                                     </div>
                                                 </div>
@@ -92,7 +92,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="layui-tab-item">
                                 <div class="card_kind">
@@ -264,10 +263,10 @@
                     </div>
                     <div class="card_select">
                         已选择:
-                        <input id="open_num" class="inp_long" readonly="readonly" value="1张" type="tel" name="open_num" lay-verify="open_num" autocomplete="off">
-                        <input id="face_value" class="inp_long" readonly="readonly" value="100元" type="tel" name="face_value" lay-verify="face_value" autocomplete="off">
-                        <input id="card_kind" class="inp_long" readonly="readonly" value="中石化" type="tel" name="card_kind" lay-verify="card_kind" autocomplete="off">
-                        <input id="card_type" class="inp_long" readonly="readonly" value="加油卡" type="tel" name="card_type" lay-verify="card_type" autocomplete="off">
+                        <input id="open_num" class="inp_long " readonly="readonly" placeholder="1张" type="tel" name="open_num" lay-verify="open_num" autocomplete="off">
+                        <input id="face_value" class="inp_long " readonly="readonly" placeholder="100元" type="tel" name="face_value" lay-verify="face_value" autocomplete="off">
+                        <input id="card_kind" class="inp_long " readonly="readonly" placeholder="中石化" type="tel" name="card_kind" lay-verify="card_kind" autocomplete="off">
+                        <input id="card_type" class="inp_long " readonly="readonly" placeholder="加油卡" type="tel" name="card_type" lay-verify="card_type" autocomplete="off">
                         <!-- <span id="face_value">100元</span>
                         <span id="card_kind">中石化</span>
                         <span id="card_type">加油卡</span> -->

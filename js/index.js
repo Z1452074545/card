@@ -40,12 +40,13 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
                 return '标题至少得5个字符啊';
             }
         },
-        open_num: [/[\s\S]*/, '不能为空'],
-        face_value: [/[\s\S]*/, '不能为空'],
-        card_kind: [/[\s\S]*/, '不能为空'],
-        card_type: [/[\s\S]*/, '不能为空'],
+        // open_num: [/^[s|S]$/, '请选择数量'],
+        open_num: [/(.+){2}$/, '请选择数量'],
+        face_value: [/(.+){2}$/, '请选择面值'],
+        card_kind: [/(.+){2}$/, '请选择种类'],
+        card_type: [/(.+){2}$/, '请选择类型'],
         card: [/^$|(.+){16}$/, '卡号16位'],
-        pass: [/(.+){16}$/, '卡密24位'],
+        pass: [/(.+){24}$/, '卡密24位'],
         content: function(value) {
             layedit.sync(editIndex);
         }
@@ -59,49 +60,37 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     var but_bg = document.querySelectorAll(".but_bg dd");
     var but_submit = document.querySelector("#but_submit");
     var buts_subm = document.querySelector("#buts_subm");
-    // but_submit.onclick = function() {
-    //         alert("出现");
-    //         return false;
-
-    //     }
-    // if (card_type.innerText == false) {
-    //     console.log(card_type.innerText == false);
-    //     buts_subm.onclick = function() {
-    //         alert(1111);
-    //     }
-    //     but_submit.setAttribute("disabled", "disabled");
-
-    // } else if (card_kind.innerText == false) {
-    //     but_submit.setAttribute("disabled", "disabled");
-    //     buts_subm.onclick = function() {
-    //         alert(2);
-    //     }
-    // } else if (face_value.innerText == null) {
-    //     but_submit.setAttribute("disabled", "disabled");
-    //     alert(3);
-    // } else if (open_num.innerText == null) {
-    //     but_submit.setAttribute("disabled", "disabled");
-    //     alert(4);
-    // } else {
-    //     but_submit.removeAttribute("disabled");
-    // }
-
 
     for (var i = 0; i < card_types.length; i++) {
         card_types[i].onclick = function() {
             card_type.value = this.innerText;
-        }
-    }
-    for (var i = 0; i < but_bg.length; i++) {
-        but_bg[i].onclick = function() {
-            for (var i = 0; i < but_bg.length; i++) {
-                but_bg[i].className = ""
-            }
-            this.className = " layui-this"
-            face_value.value = this.innerText;
+            var card_types = this.getAttribute("data-id");
+            // console.log(card_types);
+            var local = {
+                "card_types": card_types,
+            };
+            localStorage.setItem("local", JSON.stringify(local));
+            var local = JSON.parse(localStorage.getItem("local"));
+            // console.log(local);
         }
     }
 
+    for (var i = 0; i < but_bg.length; i++) {
+        but_bg[i].index = i;
+
+        but_bg[i].onclick = function() {
+            this.className = " layui-this";
+            face_value.value = this.innerText;
+            var but_bg = this.getAttribute("data-id");
+            // console.log(but_bg);
+            var local = JSON.parse(localStorage.getItem("local"));
+            local.but_bg = but_bg;
+            var local = localStorage.setItem("local", JSON.stringify(local));
+            var local = JSON.parse(localStorage.getItem("local"));
+            console.log(local);
+        };
+
+    }
     var span_but_t = document.querySelector(".span_but_t");
     var span_but_d = document.querySelector(".span_but_d");
     var quantity_nums = document.querySelector(".quantity_nums");
@@ -161,6 +150,13 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     for (var i = 0; i <= color_red.length - 1; i++) {
         color_red[i].onclick = function() {
             card_kind.value = this.innerText;
+            var color_red = this.getAttribute("data-id");
+            // console.log(color_red);
+            var local = JSON.parse(localStorage.getItem("local"));
+            local.color_red = color_red,
+                localStorage.setItem("local", JSON.stringify(local));
+            // var local = JSON.parse(localStorage.getItem("local"));
+            // console.log(local);
         }
     }
 
@@ -187,4 +183,9 @@ layui.use(['form', 'element', 'upload', 'layedit', 'laydate'], function() {
     card_m_but.onclick = function() {
         card_modai.style.display = "none";
     }
+    $(function() {
+        $(".but_bg dd").on('click', function() {
+            $(this).addClass("layui-this").siblings().removeClass("layui-this");
+        });
+    })
 })
